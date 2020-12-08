@@ -7,9 +7,9 @@
         <table class="table table-dark">
             <thead>
                 <tr>
-                    <th scope="col">codigo</th>
-                    <th scope="col">nome</th>
-                    <th scope="col">estoque</th>
+                    <th class="cabe" scope="col">codigo</th>
+                    <th class="cabe" scope="col">nome</th>
+                    <th class="cabe" scope="col">estoque</th>
                 </tr>
             </thead>
             <tbody>
@@ -17,7 +17,7 @@
                 @foreach($produtos as $value)
                 <tr>
                     <td>
-                        {{$value->id_produto}}
+                        {{$value->Id_produto}} 
                     </td>
                     <td>
                         {{$value->nome_produto}}
@@ -30,11 +30,6 @@
                 @endforeach
 
             </tbody>
-
-
-
         </table>
-
-    </div>
-</div>
+        
 @endsection

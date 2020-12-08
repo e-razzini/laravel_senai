@@ -18,4 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/', $dir.'ProdutosController@listarProdutos')->name('lista-produtos');
 Route::get('/produtos/todos', $dir.'ProdutosController@listarProdutos')->name('lista-produtos');
+Route::get('/produtos/add', $dir.'ProdutosController@add')->name('add-produtos');
+Route::post('/produtos/store', $dir.'ProdutosController@store')->name('store-produtos');
