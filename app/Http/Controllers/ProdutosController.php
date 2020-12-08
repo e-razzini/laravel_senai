@@ -26,11 +26,17 @@ class ProdutosController extends Controller
 
          $produto = new Produto();
          $produto->nome_produto =$request->get('nome_produto');
-         $produto->estoque =     $request->get('estoque');
+         $produto->estoque = $request->get('estoque');
          $produto->save();
          
          return redirect()->route('lista-produtos');
      
+   }
+   public function destroy(Request $request){
+       
+       $produto = Produto::find($request->get('Id_produto'));
+       $produto->delete();
+       return redirect()->route('lista-produtos');
    }
 
 }

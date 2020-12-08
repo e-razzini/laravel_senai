@@ -10,6 +10,7 @@
                     <th class="cabe" scope="col">codigo</th>
                     <th class="cabe" scope="col">nome</th>
                     <th class="cabe" scope="col">estoque</th>
+                    <th class="cabe" scope="col">opções</th>
                 </tr>
             </thead>
             <tbody>
@@ -24,6 +25,14 @@
                     </td>
                     <td>
                         {{$value->estoque}}
+
+                    </td>
+                    <td>
+                       <form method="POST" action="{{route('destroy-produtos')}}?Id_produto={{$value->Id_produto}}">
+                           @csrf
+                           @method('DELETE')
+                           <button type="submit" class="btn btn-danger">eliminar</button>
+                       </form>
 
                     </td>
                 </tr>
