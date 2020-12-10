@@ -18,23 +18,26 @@
                 @foreach($produtos as $value)
                 <tr>
                     <td>
-                        {{$value->Id_produto}} 
+                       
+                        {{$value->Id_produto}}
                     </td>
                     <td>
-                        {{$value->nome_produto}}
+                    <a href="{{route('edit-produtos')}}?Id_produto={{$value->Id_produto}}">  {{$value->nome_produto}} </a>
+                       
                     </td>
                     <td>
                         {{$value->estoque}}
 
                     </td>
                     <td>
-                       <form method="POST" action="{{route('destroy-produtos')}}?Id_produto={{$value->Id_produto}}">
-                           @csrf
-                           @method('DELETE')
-                           <button type="submit" class="btn btn-danger">eliminar</button>
-                       </form>
-
+                    <form method="POST" action="{{route('destroy-produtos')}}?Id_produto={{$value->Id_produto}}">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">ELIMINAR</button>
+                    </form>
                     </td>
+                    <td>
+                  
                 </tr>
                 @endforeach
 
